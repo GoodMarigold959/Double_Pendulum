@@ -26,14 +26,14 @@ body
 {
     position: absolute;
     fill:red;
-    r: 20px;
+    r: 10px;
 }
 
 #ball0
 {
     position: absolute;
     fill: black;
-    r: 20px;
+    r: 15px;
 }
 
 #arm1, #arm2
