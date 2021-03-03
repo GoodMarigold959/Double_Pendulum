@@ -25,7 +25,7 @@ body
 #ball1, #ball2
 {
     position: absolute;
-    fill:red;
+    fill:black;
     r: 10px;
 }
 
