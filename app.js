@@ -1,5 +1,3 @@
-const ARM_LENGTH = 15;
-
 let background;
 let foreground;
 let ball0;
@@ -8,24 +6,25 @@ let ball2;
 let arm1;
 let arm2;
 
-var d2Theta1 = 0;
-var d2Theta2 = 0;
-var dTheta1 = 0;
-var dTheta2 = 0;
-var Theta1 = 0 * (Math.PI) / 2;
-var Theta2 = 2.3 * (Math.PI) / 2;
-var m1 = 10;
-var m2 = 10;
-var l1 = 150;
-var l2 = 150;
-var X0 = 350;
-var Y0 = 60;
-var g = 9.8;
-var time = 0.05;
-var ball1x;
-var ball1y;
-var ball2x;
-var ball2y;
+let context;
+let d2Theta1 = 0;
+let d2Theta2 = 0;
+let dTheta1 = 0;
+let dTheta2 = 0;
+let Theta1 = 0 * (Math.PI) / 2;
+let Theta2 = 2.3 * (Math.PI) / 2;
+let m1 = 10;
+let m2 = 10;
+let l1 = 150;
+let l2 = 150;
+let X0 = 350;
+let Y0 = 60;
+let g = 9.8;
+let time = 0.05;
+let ball1x;
+let ball1y;
+let ball2x;
+let ball2y;
 
 window.onload = start;
 
@@ -50,6 +49,10 @@ function init() {
     ball0.setAttribute("cy", Y0);
     arm1.setAttribute("x1", X0);
     arm1.setAttribute("y1", Y0);
+
+    context = background.getContext("2d");
+    context.beginPath();
+    context.strokeStyle = "blue";
 
     setInterval(function(){
         animate();
@@ -76,6 +79,8 @@ function draw() {
     ball1.setAttribute("cy", ball1y);
     ball2.setAttribute("cx", ball2x);
     ball2.setAttribute("cy", ball2y);
+    context.rect(ball2x, ball2y, 1, 1);
+    context.stroke();
 }
 
 function animate(myCircle1, myCircle2, myLine1, myLine2, canvas, context) {
