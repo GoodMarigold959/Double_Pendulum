@@ -10,7 +10,7 @@ body
     overflow: hidden;
 }
 
-#background, #foreground
+#background, #foreground, #foreground2, #foreground3
 {
     position: absolute;
     left: 0;
@@ -24,21 +24,35 @@ body
 
 #ball1, #ball2
 {
-    position: absolute;
-    fill: red;
+    position: relative;
+    fill:rgb(255, 217, 0);
     r: 10px;
 }
 
-#ball0
+#ball12, #ball22
 {
-    position: absolute;
+    position: relative;
+    fill:red;
+    r: 10px;
+}
+
+#ball13, #ball23
+{
+    position: relative;
+    fill:blue;
+    r: 10px;
+}
+
+#ball0, #ball02, #ball03
+{
+    position: relative;
     fill: black;
     r: 15px;
 }
 
-#arm1, #arm2
+#arm1, #arm2, #arm12, #arm22, #arm13, #arm23
 {
-    position: absolute;
+    position: relative;
     stroke-width: 5px;
     stroke: slategray;
 }
