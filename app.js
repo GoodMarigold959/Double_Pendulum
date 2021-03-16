@@ -13,12 +13,12 @@ let Y0 = 350;
 let g = 9.8;
 let time = 0.05;
 
-let d2Theta1 = 0;
-let d2Theta2 = 0;
-let dTheta1 = 0;
-let dTheta2 = 0.102;
-let Theta1 = 1 * (Math.PI) / 2;
-let Theta2 = 3 * (Math.PI) / 2;
+let d2Theta1 = 0 * (Math.PI) / 180;
+let d2Theta2 = 0 * (Math.PI) / 180;
+let dTheta1 = 0 * (Math.PI) / 180;
+let dTheta2 = 1.02 * (Math.PI) / 180;
+let Theta1 = 90 * (Math.PI) / 180;
+let Theta2 = 270 * (Math.PI) / 180;
 let m1 = 10;
 let m2 = 10;
 let l1 = 150;
@@ -35,12 +35,12 @@ let ball2_2;
 let arm1_2;
 let arm2_2;
 
-let d2Theta1_2 = 0;
-let d2Theta2_2 = 0;
-let dTheta1_2 = 0;
-let dTheta2_2 = 0.101;
-let Theta1_2 = 1 * (Math.PI) / 2;
-let Theta2_2 = 3 * (Math.PI) / 2;
+let d2Theta1_2 = 0 * (Math.PI) / 180;
+let d2Theta2_2 = 0 * (Math.PI) / 180;
+let dTheta1_2 = 0 * (Math.PI) / 180;
+let dTheta2_2 = 1.01 * (Math.PI) / 180;
+let Theta1_2 = 90 * (Math.PI) / 180;
+let Theta2_2 = 270 * (Math.PI) / 180;
 let m1_2 = 10;
 let m2_2 = 10;
 let l1_2 = 150;
@@ -57,12 +57,12 @@ let ball2_3;
 let arm1_3;
 let arm2_3;
 
-let d2Theta1_3 = 0;
-let d2Theta2_3 = 0;
-let dTheta1_3 = 0;
-let dTheta2_3 = 0.1;
-let Theta1_3 = 1 * (Math.PI) / 2;
-let Theta2_3 = 3 * (Math.PI) / 2;
+let d2Theta1_3 = 0 * (Math.PI) / 180;
+let d2Theta2_3 = 0 * (Math.PI) / 180;
+let dTheta1_3 = 0 * (Math.PI) / 180;
+let dTheta2_3 = 1 * (Math.PI) / 180;
+let Theta1_3 = 90 * (Math.PI) / 180;
+let Theta2_3 = 270 * (Math.PI) / 180;
 let m1_3 = 10;
 let m2_3 = 10;
 let l1_3 = 150;
@@ -100,13 +100,9 @@ function start() {
     arm1_3 = document.getElementById("arm13");
     arm2_3 = document.getElementById("arm23");
 
-    init();
-}
-
-function init() {
     resize();
     window.onresize = resize;
-     
+
     ball0.setAttribute("cx", X0);
     ball0.setAttribute("cy", Y0);
     arm1.setAttribute("x1", X0);
@@ -122,10 +118,22 @@ function init() {
     arm1_3.setAttribute("x1", X0);
     arm1_3.setAttribute("y1", Y0);
 
+    animate();
+
     //context = background.getContext("2d");
     //context.beginPath();
     //context.strokeStyle = "blue";
 
+    let startButton = document.getElementById("start");
+    startButton.addEventListener("click", init)
+
+    
+}
+
+
+
+function init() 
+{
     setInterval(function(){
         animate();
     }, 5);
