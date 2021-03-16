@@ -24,35 +24,40 @@ body
 
 #ball1, #ball2
 {
-    position: relative;
+    position: absolute;
     fill:rgb(255, 217, 0);
     r: 10px;
 }
 
 #ball12, #ball22
 {
-    position: relative;
+    position: absolute;
     fill:red;
     r: 10px;
 }
 
 #ball13, #ball23
 {
-    position: relative;
+    position: absolute;
     fill:blue;
     r: 10px;
 }
 
 #ball0, #ball02, #ball03
 {
-    position: relative;
+    position: absolute;
     fill: black;
     r: 15px;
 }
 
 #arm1, #arm2, #arm12, #arm22, #arm13, #arm23
 {
-    position: relative;
+    position: absolute;
     stroke-width: 5px;
     stroke: slategray;
+}
+
+#start
+{
+    position: absolute;
 }
